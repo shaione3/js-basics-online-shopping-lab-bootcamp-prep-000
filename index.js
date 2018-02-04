@@ -11,14 +11,11 @@ function setCart(c) {
 
 function addToCart(item) {
 
-  let itemName = item;
-  let itemPrice = Math.floor((Math.random() * 100) + 1);
+  const itemPrice = Math.floor(Math.random() * 100) + 1;
 
-  let newObj = {[itemName]: itemPrice};
+  cart.push({[item]: itemPrice});
 
-  cart.push(newObj);
-
-  console.log(`${itemName} has been added to your cart.`);
+  console.log(`${item} has been added to your cart.`);
 
   return cart;
 }
@@ -41,7 +38,7 @@ function viewCart() {
     for (let i = 0; i < newArray.length; i++){
 
       if (newArray.length === 1){
-        console.log(`In your cart, you have ${newArray.toString()}.`);
+        console.log(`In your cart, you have ${newArray}.`);
       } else if (newArray.length === 2) {
         console.log(`In your cart, you have ${newArray.join(' and ')}.`);
       } else {
